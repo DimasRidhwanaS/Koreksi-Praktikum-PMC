@@ -1,0 +1,104 @@
+{
+  "tests": [
+    {
+      "name": "1",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file1.txt",
+      "output": "abcd\r\nCINTA\r\nstei\r\n531203\r\nabcdex\r\nsemangat",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "2",
+      "setup": "make main",
+      "run": "./main",
+      "input": "filePalsu.txt",
+      "output": "Error : file tidak ada",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "3",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file3.txt",
+      "output": "rrmvg\r\nYZSCVM\r\n50\r\nqaa\r\njjsml\r\nTGS\r\nshjh\r\nEYPLS\r\nXOFFP\r\nie\r\nhxpt\r\nHTKA\r\nODHI\r\nBLQ\r\nlgm\r\nexti\r\nPJM\r\nKZI\r\nZWK\r\nrtyc",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "4",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file4.txt",
+      "output": "rpne\r\nkct\r\noia\r\ncuya\r\nKUEAGX\r\nFOBKX\r\njlbvm\r\nWLVSVF\r\nznky\r\nOFU",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "5",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file5.txt",
+      "output": "13245001\r\n13245002\r\n13245003\r\n13245004\r\n13245005\r\n13245006\r\n13245007\r\n13245008\r\n13245009",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "6",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file6.txt",
+      "output": "YLBGN\r\nFGV\r\nJDIDBE\r\nDMGBMKNA",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "7",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file7.txt",
+      "output": "uzumaki\r\nuchiha\r\nITACHI\r\npikachu\r\nKEISUKE\r\n12345678\r\njaeger\r\nackerman\r\n8761239\r\nkonichiwa",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "8",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file8.txt",
+      "output": "boleh\r\nPEMECA\r\nPINGGANG\r\nMINUMKU\r\nitbdan\r\nlsdkpodj\r\n19201920\r\nsembilanbelas\r\nSEMBILANBELAS\r\nduapuluhsembilanbelas",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "9",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file9.txt",
+      "output": "WBIJ\r\nvlj\r\nCHESPR\r\nEJS\r\nPTZ\r\n25\r\nppc\r\nhsthg\r\n36\r\nVKL\r\nPTSW\r\nPZUQ\r\nVJW\r\nUZDS\r\nxqb",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "10",
+      "setup": "make main",
+      "run": "./main",
+      "input": "file10.txt",
+      "output": "maaffilekosong",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    }
+  ]
+}
