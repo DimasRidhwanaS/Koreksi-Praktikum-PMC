@@ -79,34 +79,15 @@ void tambah_artifak(int artifak){ // Lengkapi parameter
 void assign_stat(){
     //LOOPING UNTUK PARTISI KOMA
     token = strtok(str_baris, s);
-    // printf("STATUS          : ");         //----DEBUG
 
     while( token != NULL ) {
-        // printf("--------------------\n");    //----DEBUG
-
         status[loop] = atoi(token);
-        // printf("%d,",status[loop]);     //----DEBUG
-        // printf("\n");   //----DEBUG
-    
         token = strtok(NULL, s);
         loop++;
     }
 }
 
 void new_stat(){
-    // printf("Temp Plus       : ");
-    // for(int i=0; i< 6; i++){
-    //     printf("%d,", temp_plus[i]);
-    // }
-    // printf("\n");
-
-    // printf("Temp Percent    : ");
-    // for(int i=0; i< 6; i++){
-    //     printf("%d,", temp_percent[i]);
-    // }
-    // printf("\n");
-
-    // printf("NEW STAT        : ");
     for (int i=0; i<6; i++){
         status[i]+= temp_plus[i]; // Jumlah dengan senjata
         status[i] *= (100+temp_percent[i])/100;
