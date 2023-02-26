@@ -26,11 +26,11 @@ int loop = 0;
 
 // Assign stat
 int count=0;
-int status[6];
+int status[6]  = {0,0,0,0,0,0};
 int temp_plus[6] = {0,0,0,0,0,0};              // <HP,ATK,Crit Rate,Crit Damage,ER,EM>
 int temp_percent[6] = {0,0,0,0,0,0};           // <HP,ATK,Crit Rate,Crit Damage,ER,EM>
 
-void tambah_senjata(int senjata){ // Lengkapi parameter
+void tambah_senjata(char senjata){ // Lengkapi parameter
     /** @brief Fungsi digunakan untuk mengubah nilai status karakter berdasarkan pilihan senjata
      * 
     **/
@@ -43,7 +43,7 @@ void tambah_senjata(int senjata){ // Lengkapi parameter
         temp_plus[3] += 66;
     }else if (senjata == 3){
         temp_plus[1] += 550;
-        temp_plus[3] += 88;        
+        temp_plus[3] += 88;      
     }else if (senjata == 4){
         temp_plus[1] += 600;
         temp_plus[4] += 55;      
@@ -79,18 +79,27 @@ void tambah_artifak(int artifak){ // Lengkapi parameter
 void assign_stat(){
     //LOOPING UNTUK PARTISI KOMA
     token = strtok(str_baris, s);
+    // printf("STATUS          : ");         //----DEBUG
 
     while( token != NULL ) {
+        // printf("--------------------\n");    //----DEBUG
+
         status[loop] = atoi(token);
+        // printf("%d,",status[loop]);     //----DEBUG
+        // printf("\n");   //----DEBUG
         token = strtok(NULL, s);
         loop++;
     }
 }
 
 void new_stat(){
+    // printf("NEW STAT        : ");
     for (int i=0; i<6; i++){
-        status[i]+= temp_plus[i]; // Jumlah dengan senjata
-        status[i] *= (100+temp_percent[i])/100;
+        status[i] += temp_plus[i]; // Jumlah dengan senjata
+        int addition = 100 + temp_percent[i];
+        int temp_stat = status[i]*addition/100;
+        status[i] = temp_stat;
+        temp_stat = 0;
     }
 }
 
@@ -110,6 +119,7 @@ int main(){
         printf("Masukkan nomor senjata, set artifak 1, dan set artifak 2: ");
         for (int i=0; i<sizeof(spek);i++){
             scanf("%d",&spek[i]);
+            // printf("spek %d : %d\n", i, spek[i]);               //----DEBUG
         } 
         count = 0;
         char * test;
@@ -119,12 +129,17 @@ int main(){
 
         while(fgets(str_baris, sizeof(str_baris), file) !=NULL){
             count++;
-            if (count < 1){
+            if (count == 0){
+                for (int i = 0; i<strlen(str_baris);i++){
+                    nama[i] = str_baris[i];
+                    // printf("%s", nama[i]);                      //----DEBUG
+                } 
             }else if (count==1){
                 assign_stat();
                 tambah_senjata(spek[0]);
                 tambah_artifak(spek[1]);
                 tambah_artifak(spek[2]);
+                new_stat();
             }       
         }
         printf("setelah menggunakan senjata dan artifak adalah:\n");
